@@ -67,4 +67,12 @@ public class MainController {
         return "Adress updated!";
     }
 
+    @RequestMapping("/updateEmail")
+    public String updateEmail(@RequestParam Long id, @RequestParam String email){
+        Friend f = fr.findById(id).get();
+        f.setAdress(email);
+        fr.save(f);
+        return "Email updated!";
+    }
+
 }
